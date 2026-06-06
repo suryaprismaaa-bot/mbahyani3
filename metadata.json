@@ -1,0 +1,6 @@
+{
+  "name": "Portal Islami Keluarga Mbah Yani",
+  "description": "Pusat layanan ibadah digital harian keluarga dengan fitur Cari Kiblat, Al-Qur'an, Tasbih, Doa Harian, Jadwal Sholat, dan Asmaul Husna.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

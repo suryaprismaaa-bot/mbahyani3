@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-arabic: "Amiri", serif;
+  
+  --color-primary-light: #10b981; /* Emerald 500 */
+  --color-primary: #059669; /* Emerald 600 */
+  --color-primary-dark: #0f766e; /* Teal-Green 700 */
+  --color-accent: #fbbf24; /* Gold 400 */
+  --color-accent-dark: #d97706; /* Amber 600 */
+  --color-accent-gold: #d4af37; /* Metallic Gold */
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #f8fafc;
+    color: #0f172a;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body.dark {
+    background-color: #090d16;
+    color: #f1f5f9;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Glassmorphism glass card styling */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.dark .glass-panel {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+/* Islamic Geometric Pattern overlays */
+.bg-islamic-pattern {
+  background-color: #F8FAFC;
+  background-image: radial-gradient(#059669 0.5px, transparent 0.5px), radial-gradient(#059669 0.5px, #F8FAFC 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  opacity: 0.05;
+}
+
+.dark .bg-islamic-pattern {
+  background-color: #090d16;
+  background-image: radial-gradient(#10b981 0.5px, transparent 0.5px), radial-gradient(#10b981 0.5px, #090d16 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  opacity: 0.03;
+}
+
+/* Geometric Balance Theme Classes */
+.hero-gradient {
+  background: linear-gradient(135deg, #065F46 0%, #059669 100%);
+}
+
+.dark .hero-gradient {
+  background: linear-gradient(135deg, #022c22 0%, #047857 100%);
+}
+
+.feature-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(5, 150, 105, 0.1);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(5, 150, 105, 0.1);
+  border-color: #D4AF37;
+}
+
+.dark .feature-card {
+  border: 1px solid rgba(16, 185, 129, 0.15);
+}
+
+.dark .feature-card:hover {
+  box-shadow: 0 10px 25px -5px rgba(5, 150, 105, 0.25);
+  border-color: #D4AF37;
+}
+
+.gold-accent {
+  color: #D4AF37;
+}
+
+.bg-gold-accent {
+  background-color: #D4AF37;
+}
+
+.sholat-card {
+  border-top: 3.5px solid #D4AF37 !important;
+  transition: all 0.3s ease;
+}
+
+.sholat-card:hover {
+  box-shadow: 0 10px 25px -5px rgba(5, 150, 105, 0.08);
+}
+
+/* Qibla Compass Needle rotation animation */
+@keyframes compassPulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.4)); }
+  50% { transform: scale(1.02); filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.8)); }
+}
+
+.compass-glow {
+  animation: compassPulse 2s infinite ease-in-out;
+}
